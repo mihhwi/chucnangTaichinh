@@ -47,6 +47,12 @@ public class PhanQuyen implements PhanQuyenNV {
                 HeThong.connect(5);
             }
                 break;
+            case 6: {
+                System.out.println("truong ban:" + user.getUserName());
+                System.out.println("chuc nang cua truong ban");
+                HeThong.connect(6);
+            }
+                break;
             default: {
                 return;
             }

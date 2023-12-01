@@ -8,6 +8,7 @@ import model.NhanVien;
 import service.PhanQuyen;
 import service.User;
 import service.Menu.NguoiQuanTri;
+import service.Menu.TruongBan;
 import service.Menu.qlNhanLuc;
 import service.Menu.qlNhanSu;
 import service.Menu.qlTaiChinh;
@@ -117,6 +118,14 @@ public class HeThong {
             }
             case 5: {
                 qlTaiChinh.ChucNang();
+                if (state == 9) {
+                    heThong();
+                    return;
+                }
+                return;
+            }
+            case 6: { // phu dang lam
+                TruongBan.ChucNang();
                 if (state == 9) {
                     heThong();
                     return;

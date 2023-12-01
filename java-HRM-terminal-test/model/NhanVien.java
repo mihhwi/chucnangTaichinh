@@ -16,7 +16,7 @@ public class NhanVien extends ConNguoi {
         super();
 
     }
-    
+
     public NhanVien(String MaNV, String HoTen, String MaPhong,
             String ChucVu, String LoaiHD, String NgayKiHD, String NgayHetHan, String Gmail) {
         this.MaNV = MaNV;
