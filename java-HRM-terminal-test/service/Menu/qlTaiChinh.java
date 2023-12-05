@@ -1,8 +1,8 @@
 package service.Menu;
-
 import java.util.Scanner;
 import java.util.List;
 import core.HeThong;
+import model.Luong;
 import model.NhanVien;
 
 public class qlTaiChinh {
@@ -44,6 +44,7 @@ public class qlTaiChinh {
                 return;
             }
         } while (selector < 0 || selector > 7);
+        Luong luong = new Luong();
         switch (selector) {
             case 1: {
                 System.out.println("---------------------------");
@@ -72,6 +73,7 @@ public class qlTaiChinh {
                 List<NhanVien> DataList = HeThong.getList(1);
                 System.out.println("-----------------------");
                 System.out.println("chuc nang:tim kiem");
+                luong.TimKiemThongTin();
                 do {
                     System.out.println("---------------------------------");
                     System.out.println("nhap 0 de thoat");
@@ -120,6 +122,7 @@ public class qlTaiChinh {
                 List<NhanVien> DataList = HeThong.getList(1);
                 System.out.println("-----------------------");
                 System.out.println("chuc nang:them muc luong");
+                luong.ThemThongTin();
                 do {
                     System.out.println("---------------------------------");
                     System.out.println("nhap 0 de thoat");
@@ -168,6 +171,7 @@ public class qlTaiChinh {
                 List<NhanVien> DataList = HeThong.getList(1);
                 System.out.println("-----------------------");
                 System.out.println("chuc nang:sua muc luong");
+                luong.ChinhSuaThongTin();
                 do {
                     System.out.println("---------------------------------");
                     System.out.println("nhap 0 de thoat");
@@ -216,6 +220,7 @@ public class qlTaiChinh {
                 List<NhanVien> DataList = HeThong.getList(1);
                 System.out.println("-----------------------");
                 System.out.println("chuc nang:xoa muc luong");
+                luong.XoaThongTin();
                 do {
                     System.out.println("---------------------------------");
                     System.out.println("nhap 0 de thoat");
@@ -264,6 +269,7 @@ public class qlTaiChinh {
                 List<NhanVien> DataList = HeThong.getList(1);
                 System.out.println("-----------------------");
                 System.out.println("chuc nang:in danh sach");
+                luong.InDanhSach();
                 do {
                     System.out.println("---------------------------------");
                     System.out.println("nhap 0 de thoat");
