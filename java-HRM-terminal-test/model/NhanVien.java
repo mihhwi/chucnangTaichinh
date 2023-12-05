@@ -11,6 +11,7 @@ public class NhanVien extends ConNguoi {
     private String NgayKy;
     private String NgayHetHan;
     private String Gmail;
+    private String luongCB;
 
     public NhanVien() {
         super();
@@ -18,7 +19,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public NhanVien(String MaNV, String HoTen, String MaPhong,
-            String ChucVu, String LoaiHD, String NgayKiHD, String NgayHetHan, String Gmail) {
+            String ChucVu, String LoaiHD, String NgayKiHD, String NgayHetHan, String Gmail, String luongCB) {
         this.MaNV = MaNV;
         this.HoTen = HoTen;
         this.MaPhong = MaPhong;
@@ -27,11 +28,12 @@ public class NhanVien extends ConNguoi {
         this.NgayKy = NgayKiHD;
         this.NgayHetHan = NgayHetHan;
         this.Gmail = Gmail;
+        this.luongCB = luongCB;
     }
 
     public NhanVien(String HoTen, String GioiTinh, String DiaChi, String QueQuan, String NgaySinh, String SoDT,
             String DanToc, String TonGiao, String HocVan, String MaNV, String MaPhong,
-            String ChucVu, String LoaiHD, String NgayKiHD, String NgayHetHan, String Gmail) {
+            String ChucVu, String LoaiHD, String NgayKiHD, String NgayHetHan, String Gmail, String luongCB) {
         super(HoTen, GioiTinh, DiaChi, QueQuan, NgaySinh, SoDT, DanToc, TonGiao, HocVan);
         this.MaNV = MaNV;
         this.MaPhong = MaPhong;
@@ -40,6 +42,7 @@ public class NhanVien extends ConNguoi {
         this.NgayKy = NgayKiHD;
         this.NgayHetHan = NgayHetHan;
         this.Gmail = Gmail;
+        this.luongCB = luongCB;
     }
 
     public String getMaNV() {
@@ -47,7 +50,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setMaNV(String MaNV) {
-        this.MaNV = sc.nextLine();
+        this.MaNV = MaNV;
     }
 
     public String getMaPhong() {
@@ -55,7 +58,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setMaPhong(String MaPhong) {
-        this.MaPhong = sc.nextLine();
+        this.MaPhong = MaPhong;
     }
 
     public String getChucVu() {
@@ -63,7 +66,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setChucVu(String ChucVu) {
-        this.ChucVu = sc.nextLine();
+        this.ChucVu = ChucVu;
     }
 
     public String getLoaiHD() {
@@ -71,7 +74,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setLoaiHD(String LoaiHD) {
-        this.LoaiHD = sc.nextLine();
+        this.LoaiHD = LoaiHD;
     }
 
     public String getNgayKy() {
@@ -79,7 +82,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setNgayKy(String NgayKy) {
-        this.NgayKy = sc.nextLine();
+        this.NgayKy = NgayKy;
     }
 
     public String getNgayHetHan() {
@@ -87,7 +90,7 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setNgayHetHan(String NgayHetHan) {
-        this.NgayHetHan = sc.nextLine();
+        this.NgayHetHan = NgayHetHan;
     }
 
     public String getGmail() {
@@ -95,25 +98,33 @@ public class NhanVien extends ConNguoi {
     }
 
     public void setGmail(String Gmail) {
-        this.Gmail = sc.nextLine();
+        this.Gmail = Gmail;
+    }
+    public String getLuongCB() {
+        return luongCB;
+    }
+    public void setLuongCB(String luongCB) {
+        this.luongCB = luongCB;
     }
 
     public void input() {
         super.input();
         System.out.print("Nhap Ma Nhan Vien: ");
-        setMaNV(MaNV);
+        MaNV = sc.nextLine();
         System.out.print("Nhap Ma Phong: ");
-        setMaPhong(MaPhong);
+        MaPhong = sc.nextLine();
         System.out.print("Nhap Chuc Vu: ");
-        setChucVu(ChucVu);
+        ChucVu = sc.nextLine();
         System.out.print("Nhap LoaiHD: ");
-        setLoaiHD(LoaiHD);
+        LoaiHD = sc.nextLine();
         System.out.print("Nhap Ngay Ky: ");
-        setNgayKy(NgayKy);
+        NgayKy = sc.nextLine();
         System.out.print("Nhap Ngay Het Han: ");
-        setNgayHetHan(NgayHetHan);
+        NgayHetHan = sc.nextLine();
         System.out.print("Nhap Gmail: ");
-        setGmail(Gmail);
+        Gmail = sc.nextLine();
+        System.out.print("Nhap luong co ban: ");
+        luongCB = sc.nextLine();
     }
 
     public String toString() {
