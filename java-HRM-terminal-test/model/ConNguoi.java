@@ -36,7 +36,7 @@ public class ConNguoi {
     }
 
     public void setHoTen(String HoTen) {
-        this.HoTen = sc.nextLine();
+        this.HoTen = HoTen;
     }
 
     public String getGioiTinh() {
@@ -44,7 +44,7 @@ public class ConNguoi {
     }
 
     public void setGioiTinh(String GioiTinh) {
-        this.GioiTinh = sc.nextLine();
+        this.GioiTinh = GioiTinh;
     }
 
     public String getDiaChi() {
@@ -52,7 +52,7 @@ public class ConNguoi {
     }
 
     public void setDiaChi(String DiaChi) {
-        this.DiaChi = sc.nextLine();
+        this.DiaChi = DiaChi;
     }
 
     public String getQueQuan() {
@@ -60,7 +60,7 @@ public class ConNguoi {
     }
 
     public void setQueQuan(String QueQuan) {
-        this.QueQuan = sc.nextLine();
+        this.QueQuan = QueQuan;
     }
 
     public String getNgaySinh() {
@@ -68,7 +68,7 @@ public class ConNguoi {
     }
 
     public void setNgaySinh(String NgaySinh) {
-        this.NgaySinh = sc.nextLine();
+        this.NgaySinh = NgaySinh;
     }
 
     public String getSoDT() {
@@ -76,7 +76,7 @@ public class ConNguoi {
     }
 
     public void setSoDT(String SoDT) {
-        this.SoDT = sc.nextLine();
+        this.SoDT = SoDT;
     }
 
     public String getDanToc() {
@@ -84,7 +84,7 @@ public class ConNguoi {
     }
 
     public void setDanToc(String DanToc) {
-        this.DanToc = sc.nextLine();
+        this.DanToc = DanToc;
     }
 
     public String getTonGiao() {
@@ -92,7 +92,7 @@ public class ConNguoi {
     }
 
     public void setTonGiao(String TonGiao) {
-        this.TonGiao = sc.nextLine();
+        this.TonGiao = TonGiao;
     }
 
     public String getHocVan() {
@@ -100,28 +100,28 @@ public class ConNguoi {
     }
 
     public void setHocVan(String HocVan) {
-        this.HocVan = sc.nextLine();
+        this.HocVan = HocVan;
     }
 
     public void input() {
         System.out.print("Nhap Ho Ten: ");
-        setHoTen(HoTen);
+        HoTen = sc.nextLine();
         System.out.print("Nhap Gioi Tinh: ");
-        setGioiTinh(GioiTinh);
+        GioiTinh = sc.nextLine();
         System.out.print("Nhap Dia Chi: ");
-        setDiaChi(DiaChi);
+        DiaChi = sc.nextLine();
         System.out.print("Nhap Que Quan: ");
-        setQueQuan(QueQuan);
+        QueQuan = sc.nextLine();
         System.out.print("Nhap Ngay Sinh: ");
-        setNgaySinh(NgaySinh);
+        NgaySinh = sc.nextLine();
         System.out.print("Nhap So DT: ");
-        setSoDT(SoDT);
+        SoDT = sc.nextLine();
         System.out.print("Nhap Dan Toc: ");
-        setDanToc(DanToc);
+        DanToc = sc.nextLine();
         System.out.print("Nhap Ton Giao: ");
-        setTonGiao(TonGiao);
+        TonGiao = sc.nextLine();
         System.out.print("Nhap Hoc Van: ");
-        setHocVan(HocVan);
+        HocVan = sc.nextLine();
     }
 
     public String toString() {
