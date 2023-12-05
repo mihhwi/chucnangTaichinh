@@ -97,7 +97,7 @@ public class qlTaiChinh {
             }
             case 2: {
                 System.out.println("---------------------------");
-                System.out.println("____________chuc nang them xoa muc luong___________");
+                System.out.println("____________chuc nang them muc luong___________");
                 int select = 0;
                 do {
                     System.out.println("-------chon phong ban can thao tac--------");
