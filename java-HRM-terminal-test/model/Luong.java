@@ -8,7 +8,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -46,44 +45,48 @@ public class Luong implements ArraysInterface{
         String LuongKT = scanner.nextLine();
         System.out.print("Nhap luong co ban: ");
         String LuongCB = scanner.nextLine();
+    
         boolean LuongDaTonTai = false;
+        ArrayList<String> updatedList = new ArrayList<>();
+    
         try (BufferedReader reader = new BufferedReader(new FileReader(LuongfilePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
-                String currentMaLuong = data[0].trim();
-                String currentMaPhong = data[1].trim();
-                // cap nhat thong tin luong da ton tai
-                if (currentMaLuong.equals(MaLuong) && 
+                String currentMaLuong = data[0].trim(); // Mã lương trong file
+                String currentMaPhong = data[1].trim(); // Mã phòng trong file
+                // Kiểm tra mã phòng
+                if (currentMaLuong.equals(MaLuong) &&
                     currentMaPhong.equals(MaPhong)) {
-                        LuongDaTonTai = true;
-                        System.out.println("Luong da ton tai trong file. Thong tin se duoc cap nhat.");
-                        line = MaLuong + "," + MaPhong + "," + LuongKL + "," + LuongKT + "," + LuongCB;
+                    LuongDaTonTai = true;
+                    System.out.println("Luong da ton tai trong file. Thong tin se duoc cap nhat.");
+                    // Cập nhật thông tin lương nếu đã tồn tại mã phòng
+                    line = MaLuong + "," + MaPhong + "," + LuongKL + "," + LuongKT + "," + LuongCB;
                 }
-                list.add(line);
+                updatedList.add(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // neu chua co thong tin trung khop, them thong tin moi vao danh sach
+    
+        // Nếu mã phòng không tồn tại trong danh sách, thêm thông tin mới
         if (!LuongDaTonTai) {
             String newEntry = MaLuong + "," + MaPhong + "," + LuongKL + "," + LuongKT + "," + LuongCB;
-            list.add(newEntry);
+            updatedList.add(newEntry);
         }
-        // ghi lại thong tin vao file
-        try (FileWriter fileWriter = new FileWriter(LuongfilePath);
-             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-             PrintWriter printWriter = new PrintWriter(bufferedWriter)) {
-            for (String line : list) {
+    
+        // Ghi lại thông tin vào file
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(LuongfilePath))) {
+            for (String line : updatedList) {
                 printWriter.println(line);
             }
             System.out.println("Luong da duoc them vao file.");
         } catch (IOException e) {
             e.printStackTrace();
         }
-    
     }
-
+    
+    
 
     @Override // xoa thong tin Luong
     public void XoaThongTin() {
